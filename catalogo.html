@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catalogo.css" type="text/css">
+    <title>Catalogo</title>
+</head>
+<script>
+    function verificarMaiorIdade(){
+        var url = new URLSearchParams(window.location.search)
+        var maior18 = (url.get("maior") === "Sim"? true: false)
+
+        div_maior18 = document.getElementsByClassName("maior18")
+        for( i in div_maior18){
+
+            if(!div_maior18[i].style)return true;
+            if( maior18){
+
+                div_maior18[i].style.display  = 'block'
+            }
+            else{
+                div_maior18[i].style.display  = 'none'
+            }
+        }
+
+    }
+</script>
+<body onload="verificarMaiorIdade()">
+
+
+    <nav id="principal">
+        <div id="menu">
+            <a href="" >A Cervejaria</a>
+            <a href="" >Nossas Cervejas</a>
+            <a href="" >Delivery</a>
+        </div>
+		<div id="carrinho">
+			<a href="" >Meu Carrinho</a>
+            <img src="imagens/carrinho.svg" width="15" height="15">
+		</div>
+
+    </nav>
+	
+    <main id="catalogo">
+
+        <form>
+            <div>
+                <img src="imagens/imagem cerveja.png">
+            </div>
+            <div>
+                <h2>Olá! Gostaria de te dar boas vindas à Cervejaria do Pericles. <br> Escolha a bebida que mais te agrada:</h2>
+
+            </div>
+
+        </form>
+
+    </main>
+	<main id="produtos">
+        <div class="maior18" id="vinho">
+            <form action="pagamento.html" method="get">
+                <input type="hidden" value="R$ 80,00" name="valor">
+                <div>
+                    <img src="imagens/vinho.svg">
+                </div>
+                <div>
+                    <span>Vinho Tinto</span>
+                </div>
+                <div>
+                    <span>RS 80,00</span>
+                </div>
+                <div>
+                    <input type="submit" value="Comprar">
+                </div>
+            </form>
+        </div>
+
+        <div class="maior18" id="cerveja">
+            <form action="pagamento.html" method="get">
+                <input type="hidden" value="R$ 20,00" name="valor">
+                <div>
+                    <img src="imagens/cervejaH.svg">
+                </div>
+                <div>
+                    <span>Cerveja</span>
+                </div>
+                <div>
+                    <span>RS 20,00</span>
+                </div>
+                <div>
+                    <input type="submit" value="Comprar">
+                </div>
+            </form>
+        </div>
+
+        <div class="" id="refrigerante">
+            <form action="pagamento.html" method="get">
+                <input type="hidden" value="R$ 10,00" name="valor">
+                <div>
+                    <img src="imagens/guarana.svg">
+                </div>
+                <div>
+                    <span>Refrigerante</span>
+                </div>
+                <div>
+                    <span>RS 10,00</span>
+                </div>
+                <div>
+                    <input type="submit" value="Comprar">
+            </div>
+            </form>
+        </div>
+
+    </main>
+	
+</body>
+</html>
